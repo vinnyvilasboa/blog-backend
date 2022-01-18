@@ -8,6 +8,7 @@ require('dotenv').config()
 
 //bring in routes 
 const blogRoutes = require('./routes/blog')
+const authRoutes = require('./routes/auth')
 //app
 const app = express()
 // mongoose.connect(process.env.DATABASE, {useNewUrlParser:true, useCreateIndex: true, useFindAndModify: false}). then(()=> console.log('DB connected'));
@@ -24,6 +25,7 @@ if (process.env.NODE_ENV === 'development') {
 }
 //routes middleware
 app.use('/api',blogRoutes)  
+app.use('/api',authRoutes)  
 //it's the same as having it all written out there but we put it somewhere else for clean code purposes
 
 //anytime the app receives a request to the API we will respond with Date in JSON format
