@@ -5,9 +5,9 @@ const cookieParser = require('cookie-parser')
 const cors = require('cors')
 const mongoose = require('mongoose');
 require('dotenv').config()
+
+//bring in routes 
 const blogRoutes = require('./routes/blog')
-
-
 //app
 const app = express()
 // mongoose.connect(process.env.DATABASE, {useNewUrlParser:true, useCreateIndex: true, useFindAndModify: false}). then(()=> console.log('DB connected'));
