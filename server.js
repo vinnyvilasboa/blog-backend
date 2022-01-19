@@ -13,8 +13,11 @@ const authRoutes = require('./routes/auth')
 const app = express()
 // mongoose.connect(process.env.DATABASE, {useNewUrlParser:true, useCreateIndex: true, useFindAndModify: false}). then(()=> console.log('DB connected'));
 //database
-mongoose.connect(process.env.DATABASE_CLOUD).then(()=> console.log('DB connected'));
-
+// mongoose.connect(process.env.DATABASE_CLOUD).then(()=> console.log('DB connected'));
+mongoose
+  .connect(process.env.DATABASE_CLOUD, {})
+  .then(() => console.log("DB connected"))
+  .catch((err) => console.log("DB Error => ", err));
 //middlewares
 app.use(morgan('dev'))
 app.use(bodyParser.json())

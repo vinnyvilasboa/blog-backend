@@ -3,4 +3,4 @@ exports.signup = (req, res) => {
     res.json({
         user: { name, email, password }
     })
-}  
+}   
