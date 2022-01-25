@@ -62,3 +62,15 @@ exports.signin = (req, res) => {
     //generate a token and send it to client
 }
 
+exports.signout = (req, res) => {
+    res.clearCookie("token")
+    res.json({
+        message: "Signout Success"
+    })
+};
+
+exports.requireSignin = expressJwt({
+    secret: process.env.JWT_SECRET,
+    algorithms: ["HS256"], // added later
+    userProperty: "auth",
+})
