@@ -11,7 +11,6 @@ exports.signup = (req, res) => {
                 error: 'Email is taken'
             })
         }
-
         //OTHERWISE CREATE NEW USER
         const { name, email, password } = req.body
         let username = shortId.generate()
@@ -57,8 +56,6 @@ exports.signin = (req, res) => {
             user: {_id, username, name, email, role}
         })
     })
-
-
     //generate a token and send it to client
 }
 
